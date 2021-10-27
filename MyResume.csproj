@@ -67,6 +67,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\footer.css" />
+    <Content Include="assets\img\Coding1.jfif" />
+    <Content Include="assets\img\Coding2.jpg" />
+    <Content Include="assets\img\Coding3.jpeg" />
     <Content Include="assets\img\favicon.ico" />
     <Content Include="assets\img\MyProfile.jpg" />
     <Content Include="assets\img\profile.jpg" />
