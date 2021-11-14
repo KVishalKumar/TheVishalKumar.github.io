@@ -16,6 +16,43 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
    <link href="css/footer.css" rel="stylesheet" />
+   
+   
+    <style>
+        .counter {
+            background-color: #eaecf0;
+            text-align: center;
+        }
+
+        .employees, .customer, .design, .order {
+            margin-top: 70px;
+            margin-bottom: 70px;
+        }
+
+        .counter-count {
+            font-size: 18px;
+            background-color: #00b3e7;
+            border-radius: 50%;
+            position: relative;
+            color: #ffffff;
+            text-align: center;
+            line-height: 92px;
+            width: 92px;
+            height: 92px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            display: inline-block;
+        }
+
+        .employee-p, .customer-p, .order-p, .design-p {
+            font-size: 24px;
+            color: #000000;
+            line-height: 34px;
+        }
+    </style>
+   
 </head>
 <body id="page-top">
 
@@ -48,6 +85,12 @@
    
     <div class="container-fluid p-0">
 
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+            <div class="employees">
+                <p class="counter-count"><span id="count"></span></p>
+                <p class="employee-p">Employee</p>
+            </div>
+        </div>
         <!-- About-->
         <section class="resume-section" id="about" style="margin-top:-10%">
 
@@ -293,6 +336,34 @@
         </div>
     </footer>
 
+   <script>
+        console.log('Start');
+
+        var n = localStorage.getItem('counter');
+        if (n === null) {
+            n = 0;
+        } else {
+            n++;
+        }
+        console.log(n);
+        localStorage.setItem("counter", n);
+        document.getElementById("count").innerHTML = n;
+        console.log('End');
+    </script>
+    <script>
+        $('.counter-count').each(function () {
+            $(this).prop('Counter', 0).animate({
+                Counter: $(this).text()
+            }, {
+                duration: 5000,
+                easing: 'swing',
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        });
+    </script>
+   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
